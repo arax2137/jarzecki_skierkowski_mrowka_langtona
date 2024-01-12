@@ -6,8 +6,14 @@ char* fileName(char* name, int it)
     if (strcmp(name, "stdout") == 0)
         return "stdout";
 
+    int itlen = (int)(log10((double)(it))) + 1;
 
-    char *fname = malloc(sizeof(name)+1+10);
+    char* fname = malloc(sizeof(name) + 1 + MAX_IT_LEN);
+    if (fname == NULL)
+    {
+        fprintf(stderr, "Nie moge stworzyc nazwy pliku");
+        return 1;
+    }
 
     sprintf(fname, "%s_%d.txt", name, it);
 
@@ -33,7 +39,7 @@ void printBoard(wchar_t** board, int r, int c, char *fname)
 
     if (out == NULL)
     {
-        printf("NIE MOGE STWORZYC PLIKU\n");
+        fprintf(stderr, "Nie moge stworzyc pliku");
         return 1;
     }   
 

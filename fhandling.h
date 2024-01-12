@@ -2,9 +2,11 @@
 #include <stdio.h>
 #include<stdlib.h>
 #include <wchar.h>
-#include "encoding.h"
+#include "macro.h"
 #include<string.h>
+#include<math.h>
 #include<Windows.h>
+#define MAX_IT_LEN 10
 
 /*
 zwraca nazwe pliku po podaniu przedrostka i iteracji
