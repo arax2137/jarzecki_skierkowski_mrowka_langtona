@@ -1,6 +1,4 @@
 #include "board.h"
-#include "encoding.h"
-
 
 
 wchar_t **genBoard(int r, int c, char dir)
@@ -12,8 +10,23 @@ wchar_t **genBoard(int r, int c, char dir)
     c += 2;
 
     wchar_t** board = malloc(r * sizeof(wchar_t*));
+
+    if (board == NULL)
+    {
+        fprintf(stderr, "Nie moge stworzyc planszy");
+        return 1;
+    }
+
     for (int i = 0; i < r; i++)
+    {
         board[i] = malloc(c * sizeof(wchar_t));
+        if (board[i] == NULL)
+        {
+            fprintf(stderr, "Nie moge stworzyc planszy");
+            return 1;
+        }
+    }
+        
 
     for (int i = 0; i < r; i++)
         for (int j = 0; j < c; j++)
@@ -59,4 +72,52 @@ wchar_t **genBoard(int r, int c, char dir)
     return board;
 
 }
+//JESZCZE NIE DZIALA XD
+wchar_t** loadBoard(int r, int c, char* name)
+{
+    r += 2;
+    c += 2;
 
+
+    wchar_t** board = malloc(r * sizeof(wchar_t*));
+    if (board == NULL)
+    {
+        fprintf(stderr, "Nie moge stworzyc planszy");
+        return 1;
+    }
+    for (int i = 0; i < r; i++)
+    {
+        board[i] = malloc(c * sizeof(wchar_t));
+        if (board[i] == NULL)
+        {
+            fprintf(stderr, "Nie moge stworzyc planszy");
+            return 1;
+        }
+    }
+
+    FILE *in = _wfopen(name, L"r");
+    
+
+    if (in == NULL)
+    {
+        fprintf(stderr, "Nie moge otworzyc pliku");
+        return 1;
+    }
+
+    int i = 0;
+    int j = 0;
+    int buff;
+
+
+    for (int i = 0; i < r; i++)
+    {
+        for (int j = 0; j < c; j++)
+        {
+            fwscanf(in, L"%lc", &board[i][j]);
+        }
+
+    }
+
+    return board;
+
+}
