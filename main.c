@@ -4,7 +4,7 @@
 #include<string.h>
 #include <locale.h>
 #include"board.h"
-#include "encoding.h"
+#include "macro.h"
 #include "fhandling.h"
 
 
@@ -13,15 +13,22 @@ int main() {
 
     setlocale(LC_ALL, "");
 
-    char* name = "aaa";
+    int it = 1;
+    int x = 100;
+    int y = 50;
+    char dir = 'u';
+    char* nameOut = "test";
+    //char* nameIn = "test.txt";
 
-    wchar_t** board = genBoard(10, 10, 'u');
+    wchar_t** board = genBoard(x, y, dir);
 
-    for (int i = 0; i < 10; i++)
+    for (int i = 0; i < it; i++)
     {
-        char* fname = fileName(name, i);
-        printBoard(board, 10, 10, fname);
+        printBoard(board, x, y, fileName(nameOut, i));
     }
+
+    
+    
 
     
     
