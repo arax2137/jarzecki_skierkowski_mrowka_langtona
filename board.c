@@ -60,17 +60,3 @@ wchar_t **genBoard(int r, int c, char dir)
 
 }
 
-void printBoard(wchar_t** board, int r, int c)
-{
-    r += 2;
-    c += 2;
-
-    for (int i = 0; i < r; i++)
-    {
-        for (int j = 0; j < c; j++)
-        {
-            printf("%lc", board[i][j]);
-        }
-        printf("\n");
-    }
-}
