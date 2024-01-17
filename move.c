@@ -76,7 +76,7 @@ void przejscie(wchar_t **board,int r,int c)
             {
                 if (board[i+1][j] == VERTICAL_L || board[i+1][j] == HORIZONTAL_L)
                     system("PAUSE");
-                board[i][j] = WHITE_SQUARE
+                board[i][j] = WHITE_SQUARE;
                 if (board[i+1][j] == WHITE_SQUARE)
                     board[i+1][j] = ARROW_SOUTH_WHITE;
                 else
