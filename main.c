@@ -13,20 +13,25 @@ int main() {
 
     setlocale(LC_ALL, "");
 
+    //parametry
     int it = 1;
-    int x = 100;
-    int y = 50;
+    int r = 35;
+    int c = 70;
+    int randP = 50; // <0%, 100%>
     char dir = 'u';
-    char* nameOut = "test";
-    //char* nameIn = "test.txt";
+    char* nameOut = "los_test";
+     //char* nameIn = "aaa_0.txt";
+     
+     
+     
+    //wchar_t** board = boardLoad(x, y, nameIn);
 
-    wchar_t** board = genBoard(x, y, dir);
+    wchar_t** board = boardGen(r, c, dir, randP);
 
     for (int i = 0; i < it; i++)
     {
-        printBoard(board, x, y, fileName(nameOut, i));
+        printBoard(board, r, c, fileName(nameOut, i));
     }
-
     
     
 
