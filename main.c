@@ -6,7 +6,7 @@
 #include"board.h"
 #include "macro.h"
 #include "fhandling.h"
-
+#include "move.h"
 
 
 int main() {
@@ -21,21 +21,19 @@ int main() {
     char dir = 'u';
     char* nameOut = "los_test";
      //char* nameIn = "aaa_0.txt";
-     
-     
-     
+   
     //wchar_t** board = boardLoad(x, y, nameIn);
 
     wchar_t** board = boardGen(r, c, dir, randP);
+    
+ int a = r + 2;
+ int b = c + 2;
 
-    for (int i = 0; i < it; i++)
-    {
-        printBoard(board, r, c, fileName(nameOut, i));
-    }
-    
-    
-
-    
-    
+ for (int i = 0; i < it; i++)
+ {
+     printBoard(board, r, c, fileName(nameOut, i));
+     przejscie(board, a, b);
+ }
+        
     return 0;
 }
