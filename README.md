@@ -1,5 +1,4 @@
 # jarzecki_skierkowski_mrowka_langtona
-mrówa
 
 Program jest przystosowany do uruchomienia na systemie Windows
 
