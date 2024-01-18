@@ -1,3 +1,16 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include<stdlib.h>
+#include <wchar.h>
+#include<string.h>
+#include <locale.h>
+#include <time.h> 
+#include<math.h>
+#include<Windows.h>
+
+#define MAX_IT_LEN 10
+#define MAXNAME 128
+
 #define BLACK_SQUARE L'█'    
 #define WHITE_SQUARE L' '          
 

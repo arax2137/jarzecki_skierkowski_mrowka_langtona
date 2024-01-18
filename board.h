@@ -1,20 +1,9 @@
-#define _CRT_SECURE_NO_WARNINGS
-#include <stdio.h>
-#include<stdlib.h>
-#include <wchar.h>
 #include "macro.h"
-#include <time.h> 
-
-
 
 /*
 inicjuje plansze
 */
 wchar_t** boardInit(int r, int c);
-
-
-
-
 
 /*
 generuje plansze o wymiarach r x c
